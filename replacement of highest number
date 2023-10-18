@@ -1,0 +1,44 @@
+            Random rand = new Random();
+
+            int[,] array = new int[10, 10];
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = rand.Next(1, 10);
+                    Console.Write(array[i, j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            int hightestNumber = array[0, 0];
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (array [i,j] > hightestNumber)
+                    {
+                        hightestNumber = array[i, j];
+                    }
+                }
+            }
+            Console.WriteLine("Самое большое число массива = " + hightestNumber);
+            Console.WriteLine("Замена числа " + hightestNumber + " на 0");
+            Console.WriteLine();
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (array[i, j] == hightestNumber)
+                    {
+                        Console.Write(array[i, j] = 0);
+                    }
+                    else
+                    {
+                        Console.Write(array[i, j]);
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
